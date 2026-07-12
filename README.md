@@ -1,8 +1,59 @@
-# Megaminx Patterns
+# Improved Megaminx Patterns
 
-A static, searchable catalogue of Megaminx patterns. Each page combines a live
-Twizzle preview with the previous published best, a personal best, and a
-personal FTM-optimised solution.
+A collection of **334 Megaminx patterns**, revisited one by one to find shorter
+algorithms. The catalogue compares each result with the previously published
+algorithm and includes an interactive Alpha Twizzle preview, a personal best,
+and a personal FTM-optimised solution.
+
+## Results
+
+| | Result |
+| --- | ---: |
+| Patterns improved | **218 / 334 (65.3%)** |
+| Patterns tied | 76 / 334 (22.8%) |
+| Patterns not improved | 40 / 334 (12.0%) |
+| Total catalogue length | **10,250 → 8,801 BTM** |
+| Net moves saved | **1,449 BTM (14.1%)** |
+| Median saving among improved patterns | **6 BTM** |
+| Average saving among improved patterns | **7.9 BTM** |
+
+In other words, almost two out of every three published algorithms were made
+shorter. The improved subset alone accounts for 1,727 saved moves before the
+longer and tied results are included in the catalogue-wide net figure.
+
+### Improvement histogram
+
+Distribution of the **218 improved patterns** by the number of BTM moves saved:
+
+```text
+Moves saved   Patterns
+ 1–2          ████████████             35
+ 3–5          ████████████████████████ 72
+ 6–10         ██████████████████       53
+11–20         ██████████████           41
+21+           ██████                   17
+```
+
+### Highlights
+
+- **4 Propellers** (`N500.03` and `N500.04`) has the largest absolute
+  improvement: **58 → 25 BTM**, saving 33 moves (56.9%).
+- **Superfliptwist** (`V500.01`) drops from **76 → 44 BTM**, saving 32 moves.
+- **4 Stars** (`A850.02`) is exactly half as long: **50 → 25 BTM**.
+- 48 of the 62 Simple Patterns were improved (**77.4%**).
+- For 79 patterns, the personal best and the FTM-focused solution are the same
+  algorithm after whitespace normalisation.
+
+The statistics above are calculated from `public/patterns.json`. “Improved”
+means that `new_solution_length` is lower than `old_solution_length`; aggregate
+figures use the BTM lengths stored in those fields.
+
+## Explore the catalogue
+
+Each pattern page provides the old published algorithm alongside the new
+solutions, a live 3D Megaminx, direct Alpha Twizzle editor links, search, and
+navigation through the complete collection. Individual patterns can be linked
+with a query such as `?pattern=A200.01`.
 
 ## Run locally
 
