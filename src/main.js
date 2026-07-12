@@ -62,7 +62,7 @@ function makePlayer() {
     background: "none",
     controlPanel: "bottom-row",
     viewerLink: "twizzle",
-    cameraDistance: 4.8,
+    cameraDistance: 5.5,
     tempoScale: 2,
     experimentalSetupAnchor: "start"
   });
@@ -70,6 +70,23 @@ function makePlayer() {
   player.setAttribute("experimental-drag-input", "auto");
   player.setAttribute("experimental-stickering", "full");
   player.setAttribute("aria-label", "Interactive Megaminx pattern");
+
+  const fitPlayerRows = () => {
+    player.contentWrapper.style.height = "100%";
+    player.contentWrapper.style.gridTemplateRows =
+      "minmax(0, 1fr) 1.5em 2.5em";
+
+    for (const child of player.contentWrapper.children) {
+      child.style.height = "100%";
+      child.style.minHeight = "0";
+    }
+  };
+
+  new MutationObserver(fitPlayerRows).observe(player.contentWrapper, {
+    childList: true
+  });
+  fitPlayerRows();
+
   return player;
 }
 
