@@ -5,6 +5,8 @@ algorithms. The catalogue compares each result with the previously published
 algorithm and includes an interactive Alpha Twizzle preview, a personal best,
 and a personal FTM-optimised solution.
 
+**[Open the interactive Megaminx Patterns catalogue](https://ananasclassic.github.io/improved_megaminx_patterns/)**
+
 ## Results
 
 | | Result |
