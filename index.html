@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A searchable collection of Megaminx patterns, historical records and personal solutions."
+    />
+    <title>Megaminx Patterns</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#pattern-content">Skip to pattern</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-controls="sidebar"
+          aria-expanded="false"
+        >
+          <span class="menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="nav-toggle-label">Browse</span>
+        </button>
+
+        <a class="site-title" href="./" aria-label="Megaminx Patterns home">
+          <span>Megaminx Patterns</span>
+        </a>
+
+        <form class="search" id="search-form" role="search">
+          <label class="visually-hidden" for="pattern-search">Search patterns</label>
+          <svg aria-hidden="true" viewBox="0 0 20 20">
+            <circle cx="8.5" cy="8.5" r="5.5"></circle>
+            <path d="m13 13 4 4"></path>
+          </svg>
+          <input
+            id="pattern-search"
+            type="search"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Search patterns or code"
+          />
+          <kbd class="search-shortcut" aria-hidden="true">/</kbd>
+        </form>
+
+        <span class="collection-count"><strong id="pattern-count">334</strong> patterns</span>
+      </div>
+    </header>
+
+    <div class="mobile-backdrop" id="mobile-backdrop" hidden></div>
+
+    <main class="app-shell">
+      <aside class="sidebar" id="sidebar" aria-label="Pattern navigation">
+        <div class="sidebar-mobile-header">
+          <strong>Browse patterns</strong>
+          <button id="nav-close" type="button" aria-label="Close navigation"><span aria-hidden="true"></span></button>
+        </div>
+
+        <nav class="nav-panel section-panel" aria-label="Collections">
+          <div class="panel-title">Pretty Patterns</div>
+          <div id="section-nav"></div>
+        </nav>
+
+        <nav class="nav-panel pattern-panel" aria-label="Patterns">
+          <div id="pattern-nav"></div>
+        </nav>
+      </aside>
+
+      <section class="loading-state" id="loading-state" aria-live="polite">
+        Loading patterns…
+      </section>
+
+      <section class="pattern-page" id="pattern-content" tabindex="-1" hidden>
+        <div class="preview-column">
+          <div class="preview-frame" id="player-mount" aria-label="Interactive Megaminx preview"></div>
+
+          <div class="preview-meta">
+            <span>Megaminx</span>
+            <span id="preview-code"></span>
+          </div>
+
+          <div class="pattern-pager" aria-label="Pattern pagination">
+            <button id="previous-pattern" type="button">
+              <span aria-hidden="true">←</span>
+              Previous
+            </button>
+            <span id="pattern-position"></span>
+            <button id="next-pattern" type="button">
+              Next
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+
+        <article class="details-column">
+          <div class="breadcrumb" id="breadcrumb"></div>
+
+          <header class="pattern-header">
+            <h1 id="pattern-title"></h1>
+            <span class="comparison-badge" id="comparison-badge"></span>
+          </header>
+
+          <div class="solutions" id="solutions"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Personal Megaminx pattern collection</span>
+      <a href="https://alpha.twizzle.net/" target="_blank" rel="noopener noreferrer">Alpha Twizzle</a>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
