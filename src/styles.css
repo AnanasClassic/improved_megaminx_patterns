@@ -168,6 +168,25 @@ summary:focus-visible,
   font-weight: 600;
 }
 
+.brand-block {
+  display: grid;
+  justify-items: start;
+  gap: 7px;
+}
+
+.source-attribution {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.source-attribution:hover {
+  color: var(--blue-hover);
+  text-decoration: underline;
+}
+
 .nav-toggle,
 .sidebar-mobile-header {
   display: none;
@@ -187,19 +206,21 @@ summary:focus-visible,
 
 .app-shell {
   width: min(1480px, calc(100% - 32px));
-  min-height: calc(100vh - 160px);
-  margin: 22px auto 40px;
+  height: calc(100vh - 172px);
+  min-height: 520px;
+  margin: 22px auto 0;
   display: grid;
   grid-template-columns: 252px minmax(0, 1fr);
   gap: 34px;
-  align-items: start;
+  align-items: stretch;
+  overflow: hidden;
 }
 
 .sidebar {
-  position: sticky;
-  top: 18px;
-  max-height: calc(100vh - 36px);
-  overflow: auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   scrollbar-width: thin;
 }
 
@@ -230,7 +251,22 @@ summary:focus-visible,
 }
 
 .section-panel {
+  flex: 0 0 auto;
   padding-bottom: 7px;
+}
+
+.pattern-panel {
+  min-height: 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#pattern-nav {
+  min-height: 0;
+  overflow: auto;
+  scrollbar-width: thin;
 }
 
 .section-link,
@@ -373,10 +409,13 @@ summary:focus-visible,
 
 .pattern-page {
   min-width: 0;
+  min-height: 0;
+  height: 100%;
   display: grid;
   grid-template-columns: minmax(400px, 520px) minmax(420px, 1fr);
   gap: clamp(30px, 3vw, 50px);
   align-items: start;
+  overflow: hidden;
 }
 
 .preview-column {
@@ -442,6 +481,10 @@ summary:focus-visible,
 
 .details-column {
   min-width: 0;
+  max-height: 100%;
+  padding-right: 8px;
+  overflow: auto;
+  scrollbar-width: thin;
 }
 
 .breadcrumb {
@@ -608,12 +651,36 @@ summary:focus-visible,
   }
 
   .app-shell {
+    height: auto;
+    min-height: calc(100vh - 150px);
+    margin-bottom: 40px;
     grid-template-columns: 214px minmax(0, 1fr);
     gap: 24px;
+    align-items: start;
+    overflow: visible;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 18px;
+    max-height: calc(100vh - 36px);
+  }
+
+  .pattern-panel,
+  #pattern-nav {
+    overflow: visible;
   }
 
   .pattern-page {
+    height: auto;
     display: block;
+    overflow: visible;
+  }
+
+  .details-column {
+    max-height: none;
+    padding-right: 0;
+    overflow: visible;
   }
 
   .preview-column {
@@ -656,8 +723,16 @@ summary:focus-visible,
   }
 
   .site-title {
-    justify-self: end;
     font-size: 22px;
+  }
+
+  .brand-block {
+    justify-self: end;
+    justify-items: end;
+  }
+
+  .source-attribution {
+    display: none;
   }
 
   .brand-mark {
@@ -686,10 +761,19 @@ summary:focus-visible,
     width: min(88vw, 330px);
     max-height: none;
     padding: 0 12px 24px;
+    overflow: hidden;
     background: #fff;
     box-shadow: 3px 0 18px rgb(0 0 0 / 16%);
     transform: translateX(-105%);
     transition: transform 180ms ease-out;
+  }
+
+  .pattern-panel {
+    overflow: hidden;
+  }
+
+  #pattern-nav {
+    overflow: auto;
   }
 
   .nav-open .sidebar {
