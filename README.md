@@ -5,6 +5,11 @@ algorithms. The catalogue compares each result with the previously published
 algorithm and includes an interactive Alpha Twizzle preview, a personal best,
 and a personal FTM-optimised solution.
 
+The pattern collection and previously published algorithms are sourced from
+Walter Randelshofer's **[Pretty Patterns for the Megaminx](https://www.randelshofer.ch/rubik/megaminx/)**
+catalogue. This project adds the new personal solutions, comparisons, searchable
+interface, and Alpha Twizzle integration.
+
 **[Open the interactive Megaminx Patterns catalogue](https://ananasclassic.github.io/improved_megaminx_patterns/)**
 
 ## Results
@@ -110,7 +115,10 @@ If you do not want to use Git, run `npm run build` and upload the contents of
 
 ## Data
 
-The complete collection is available as a machine-readable JSON dataset:
+The pattern names, catalogue structure, and previously published solutions were
+collected from Walter Randelshofer's
+**[Pretty Patterns for the Megaminx](https://www.randelshofer.ch/rubik/megaminx/)**.
+The complete enriched collection is available as a machine-readable JSON dataset:
 **[`public/patterns.json`](public/patterns.json)**. It contains all 334 patterns
 and can be viewed directly, downloaded, or reused in other Megaminx tools.
 
