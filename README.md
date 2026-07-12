@@ -46,6 +46,23 @@ Moves saved   Patterns
 - For 79 patterns, the personal best and the FTM-focused solution are the same
   algorithm after whitespace normalisation.
 
+### Improving algorithms that were already short
+
+The gains are not limited to long algorithms. Of the 104 published solutions
+that were already **20 BTM or shorter**, 30 were improved (28.8%), removing 64
+moves from that improved subset. Some particularly compact examples are:
+
+| Pattern | Code | Previous | New | Saving |
+| --- | --- | ---: | ---: | ---: |
+| 3 Bricks (cw / ccw) | `N600.01–02` | 11 BTM | **10 BTM** | 1 |
+| 5 Ties (±144°) | `I680.03–04` | 16 BTM | **14 BTM** | 2 |
+| 5 C's (±144°) | `A430.03–04` | 18 BTM | **14 BTM** | 4 |
+| Color Windmill | `N480.03–04` | 18 BTM | **15 BTM** | 3 |
+| Equator Bricks (±144°) | `I630.03–04`, `I630.07–08` | 20 BTM | **17 BTM** | 3 |
+
+The two 10-move Bricks solutions are especially notable: their previous
+algorithms were only 11 BTM, leaving very little obvious room for improvement.
+
 The statistics above are calculated from `public/patterns.json`. “Improved”
 means that `new_solution_length` is lower than `old_solution_length`; aggregate
 figures use the BTM lengths stored in those fields.
@@ -93,11 +110,27 @@ If you do not want to use Git, run `npm run build` and upload the contents of
 
 ## Data
 
-The catalogue is loaded from `public/patterns.json`; the original supplied data
-is retained in `data/patterns-source.json`. The `code` field controls
-navigation: its first letter identifies the section and its first four
-characters identify the pattern group. Individual pages are linkable with the
-`?pattern=A200.01` URL parameter.
+The complete collection is available as a machine-readable JSON dataset:
+**[`public/patterns.json`](public/patterns.json)**. It contains all 334 patterns
+and can be viewed directly, downloaded, or reused in other Megaminx tools.
+
+Each record includes:
+
+- the pattern name and unique catalogue code;
+- the previous published algorithm, length, author, and publication date;
+- the new personal-best algorithm and its BTM length;
+- a separate FTM-focused solution and length;
+- ready-to-open Alpha Twizzle links for all solution variants;
+- a Twizzle-compatible version of the legacy published algorithm used by the
+  interactive preview.
+
+The website loads this JSON file directly, so the interface and the downloadable
+dataset always describe the same collection. The original input data is kept in
+**[`data/patterns-source.json`](data/patterns-source.json)** for provenance.
+
+The `code` field controls navigation: its first letter identifies the section
+and its first four characters identify the pattern group. Individual pages are
+linkable with the `?pattern=A200.01` URL parameter.
 
 If `new_solution` and `minimal_ftm_solution` are identical after whitespace is
 normalised, the interface displays one combined personal-solution block.
