@@ -62,7 +62,7 @@ function makePlayer() {
     background: "none",
     controlPanel: "bottom-row",
     viewerLink: "twizzle",
-    cameraDistance: 6,
+    cameraDistance: 4.8,
     tempoScale: 2,
     experimentalSetupAnchor: "start"
   });

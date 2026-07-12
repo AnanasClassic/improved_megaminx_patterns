@@ -385,7 +385,7 @@ summary:focus-visible,
 
 .preview-frame {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 2 / 1;
   border: 1px solid var(--border-light);
   background: #fff;
 }
@@ -621,7 +621,7 @@ summary:focus-visible,
   }
 
   .preview-frame {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 2 / 1;
   }
 }
 
@@ -741,7 +741,7 @@ summary:focus-visible,
   }
 
   .preview-frame {
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 2 / 1;
   }
 
   .breadcrumb {
